@@ -67,7 +67,7 @@ function showQuiz(questions, quizContainer, scoresContainer, submitButton){
 
         // add an html checkbox
         answers.push(
-          '<label' + '<input type="radio" name="question ' + i + ' " value=" ' + letter + ' "> ' + letter + ': ' + questions[i].answers[letter] + '</label>'
+          '<label>' + '<input type="checkbox" name="question ' + i + ' " value=" ' + letter + ' "> ' + letter + ': ' + questions[i].answers[letter] + '</label>'
         );
       }
 
@@ -100,9 +100,9 @@ function showQuiz(questions, quizContainer, scoresContainer, submitButton){
 
         correctNum++;
 
-        answerContainers[i].innerHTML = 'You got it right buster!';
+        answerContainers[i].style.color = 'green';
       } else {
-        answerContainers[i].innerHTML = 'You are damn wrong!';
+        answerContainers[i].style.color = 'red';
       }
 
     }
