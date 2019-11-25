@@ -256,6 +256,47 @@
 //     getOptions();
 // }
 
+
+// DATA CHART
+function makeChart(){
+  var namesArray = [];
+  var scoreArray =[];
+
+  // name arrays here or questions arrays
+
+  for(var i = 0; i < User.scoreArray.length; i++){
+    var score = User.scoreArray[i].clicks;
+    scoreArray.push(score);
+  }
+
+  var chartContent = document.getElementById('user-chart').getContext('2d');
+  var gameChart = new chartContent(chartContent, {
+    type: 'bar',
+
+    data: {
+      labels: //questions arrays
+      datasets: [{
+        label: 'score',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: //scoreArray,
+      }]
+    }
+    // Configuration options go here
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+}
+// END DATA CHART
+
+
 // START SETTING UP TABLE
 
 var container = document.getElementById('tableData');
