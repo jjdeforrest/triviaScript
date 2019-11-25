@@ -1,4 +1,5 @@
 'use strict';
+
 // // question-functions
 // // things needed for the function
 // // quiz questions
@@ -80,23 +81,33 @@
 //     quizContainer.innerHTML = outcome.join('');
 //   }
 
-  }
+//   }
 
-];
+// ];
 
-showQuiz(ourQuestions, quizContainer, scoresContainer, submitButton);
+// showQuiz(ourQuestions, quizContainer, scoresContainer, submitButton);
 
-// function which holds the quiz questions
-function showQuiz(questions, quizContainer, scoresContainer, submitButton){
+// // function which holds the quiz questions
+// function showQuiz(questions, quizContainer, scoresContainer, submitButton){
 
-  function showQuestions(questions, quizContainer){
+//   function showQuestions(questions, quizContainer){
+
+//     var outcome = [];
+//     var answers;
+//     var letter;
 
     var letter;
 
-    // we loop through each questions
-    for(var i = 0; i < questions.length; i++){
+
+//     // we loop through each questions
+//     for(var i = 0; i < questions.length; i++){
+
+
+//       // the current list of answers should be an empty array
+//       answers = [];
 
       var currentQuestionElem = document.getElementById('questions' + i);
+
 
       var questionsLegendElem = document.createElement('legend');
       console.log(questionsLegendElem);
@@ -104,6 +115,24 @@ function showQuiz(questions, quizContainer, scoresContainer, submitButton){
       questionsLegendElem.textContent = questions[i].question;
       currentQuestionElem.appendChild(questionsLegendElem);
 
+//       // loop through each answer available to a question
+//       for(letter in questions[i].answers){
+
+//         // add an html checkbox
+//         answers.push(
+//           '<label>' + '<input type="checkbox" name="question ' + i + ' " value=" ' + letter + ' "> ' + letter + ': ' + questions[i].answers[letter] + '</label>'
+//         );
+//       }
+
+//       // pushing the question and the answer to the outcome
+//       outcome.push(
+//         '<div class="question">' + questions[i].question + '</div>' + '<div class="answers">' + answers.join('') + '</div>'
+//       );
+
+//     }
+//     quizContainer.innerHTML = outcome.join('');
+//   }
+//   // showQuestions(questions, quizContainer);
       //   // loop through each answer available to a question
       for(letter in questions[i].answers){
 
@@ -133,7 +162,38 @@ function showQuiz(questions, quizContainer, scoresContainer, submitButton){
 
 //       // target the selected answer
 //       userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
-=======
+
+
+//       // conditional to check for correct answers
+//       if(userAnswer === questions[i].correctAnswer){
+
+//         correctNum++;
+
+//         answerContainers[i].innerHTML = 'You got it right buster!';
+//       } else {
+//         answerContainers[i].innerHTML = 'You are damn wrong!';
+//       }
+
+//     }
+//     // display the total correct number of answewrs
+//     scoresContainer.innerHTML = correctNum + ' out of ' + questions.length;
+//   }
+
+//   showQuestions(questions, quizContainer);
+
+//   // when the user clicks on the submit button it shows them their score
+
+//   function clickHandler(){
+//     showScores(questions, quizContainer, scoresContainer);
+
+//   }
+
+//   submitButton.addEventListener('click', clickHandler);
+
+//   // clickHandler();
+
+// }
+
       console.log(answerContainers);
       // target the selected answer
       var currentContainer = answerContainers[i];
@@ -176,7 +236,40 @@ function showQuiz(questions, quizContainer, scoresContainer, submitButton){
   // function clickHandler(){
   //   showScores(questions, quizContainer, scoresContainer);
 
+var questionNumber = 0;
+var askQuestion = [];
+
+//adding all the objects to array
+var questionsArr = [];
+questionsArr.push(new IdentifyFamousPeople(' ', 'img/bradley.jpg', ['Bradley Cooper', 'Leonardo Di Caprio', 'Nicholas Cage'], 'option_1', 'img/bradleyFull.jpg'));
+questionsArr.push(new IdentifyFamousPeople(' ', 'img/dwayne.jpg', ['Robert Di Nero', 'Dwayne Johnson', 'Hugh Jackman'], 'option_2', 'img/dwayneFull.jpg'));
+questionsArr.push(new IdentifyFamousPeople(' ', 'img/gaga.jpg', ['Miley Cyrus', 'Madonna', 'Lady Gaga'], 'option_3', 'img/gagaFull.jpg'));
+questionsArr.push(new IdentifyFamousPeople('', 'img/messi.jpg', ['Christiano Ronaldo', 'Lionel Messi', 'David Beckham'], 'option_2', 'img/messiFull.jpg'));
+questionsArr.push(new IdentifyFamousPeople(' ', 'img/jennifer.jpg', ['Jennifer Lopez', 'Penelope Cruz', 'Jennifer Aniston'], 'option_1', 'img/jenniferFull.jpg'));
+
+var famousPeopleContainer = document.getElementById('famous_people');
+console.log(famousPeopleContainer)
+
+function getQuestion() {
+    for (var i = questionNumber; i < questionsArr.length; i++ ){
+        //Question Element
+        var question = addTextElement('h2', 'id', 'question', famousPeopleContainer, questionsArr[i].question);
+        
+        //Image Element
+        var cropImage = addImage('img', 'id', 'crop_image', famousPeopleContainer, questionsArr[i].cropPicture);
+        
+        //Answer option element
+        var ulElement = addTextElement('ul', 'id', 'ul_element', famousPeopleContainer);
+        
+        //display all three answer options
+        for (var j = 0; j < questionsArr[i].options.length; j++) {
+            var option = addTextElement('li', 'id', `option_${j + 1}`, ulElement, questionsArr[i].options[j]);
+        }
+        break;       
+    }
+
   // }
+
 
   // submitButton.addEventListener('click', clickHandler);
 }
@@ -187,6 +280,15 @@ function submitHandler(event){
   event.preventDefault();
   console.log('submitHandler');
 
+//function to get text element
+function addTextElement(tag, attribute, value, container, text) {
+    var element = document.createElement(tag);
+    element.setAttribute(attribute, value);
+    container.appendChild(element);
+    element.textContent = text;
+    console.log(tag)
+    return element;
+}
 // DATA CHART
 function makeChart(){
   var namesArray = [];
@@ -224,6 +326,36 @@ function makeChart(){
     }
   });
 }
+
+getOptions();
+
+// respond to the click on the options
+function clickHandler(event1) {
+    var id = event1.target.id;
+
+        if (id === questionsArr[questionNumber].answer) {
+            //display answer
+            addTextElement('h3', 'id', 'answer', famousPeopleContainer, 'Correct!');
+            //display full image
+            addImage('img', 'id', 'full_image', famousPeopleContainer, questionsArr[questionNumber].fullPicture);
+        }
+        else {
+            //display answer
+            addTextElement('h3', 'id', 'answer', famousPeopleContainer, 'Incorrect!  YOU SUCK!');
+            //display full image
+            addImage('img', 'id', 'full_image', famousPeopleContainer, questionsArr[questionNumber].fullPicture);
+    
+        }
+        questionNumber++;
+        var button  = addTextElement('button', 'id', 'next_button', famousPeopleContainer, 'Next');
+
+        // debugger;
+        // option1.removeEventListener('click', clickHandler);
+        // option2.removeEventListener('click', clickHandler);
+        // option3.removeEventListener('click', clickHandler);
+        
+        button.addEventListener('click', nextQuestion);
+    
 // END DATA CHART
 
 
@@ -318,8 +450,46 @@ function loadTableData(personData){
     }
   }
 }
+////////////////////////////////////////////
+///      programming                   ////
+//////////////////////////////////////////
+
+
+function ProgrammingQuestion (question, options, answer) {
+  this.question = question;
+  this.options = options;
+  this.answer = answer;
+}
+
+var programQuestionArr = [];
+
+
+programQuestionArr.push(new ProgrammingQuestion('What is the correct way to write a JS array?', ['var colors = "red", "green", "blue"', 'var colors = ["red", "green", "blue"]', 'var colors = (1:"red", 2:"green", 3:"blue")'], 'option_2'));
+programQuestionArr.push(new ProgrammingQuestion('What does '==='mean in javascript?', [`lol. no such thing as '==='`, 'equal value and equal type', 'equal variables only' ], 'option_1'));
+programQuestionArr.push(new ProgrammingQuestion('What is the JavaScript syntax for printing values in Console?', ['print(5)', 'console.log(5);(correct)', 'console.print(5);'], 'option_2'));
+programQuestionArr.push(new ProgrammingQuestion('I designed a mechanical computer called the Analytical Engine who am I?',[' Bill Gates', 'Sylvester Stallone', 'Charles Babbage(correct)'], 'option_3'));
+programQuestionArr.push(new ProgrammingQuestion('What website do we use for version control?', ['GitHub', 'Slack', 'Googledocs'], 'option_1'));
+
+
+
+function getProgrammingQuestion() {
+  for (var i = 0; i < programQuestionArr.length; i++){
+    //Question Element
+    var programmingContainer = document.getElementById('programming');
+    console.log(document.getElementById('programming'))
+    var element = document.createElement('h2');
+
+    programmingContainer.appendChild(element);
+    console.log(element);
+    // addTextElement('h2', 'id', 'programmingQuestion', programmingContainer, programQuestionArr[i].question);
+    element.textContent = programQuestionArr[i].question;
+  }
+}
+console.log('test')
+getProgrammingQuestion();
 
 }
 
 
 quizContainer.addEventListener('submit', submitHandler);
+
