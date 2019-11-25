@@ -6,22 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="style/reset.css">
   <link rel="stylesheet" type="text/css" href="style/style.css">
-  <title>Document</title>
+  <title>TriviaScript</title>
 </head>
 <body>
-  <main>
-    <div id="quiz"></div>
-    <button id="submit">Get Score</button>
-    <div id="scores"></div>
-  </main>
-  <script src="/JS/app.js"></script>
   <header>
     <a href="index.html" id="logo">
-      <h1>TriviaScript</h1>
-      <h2>Something here or not</h2>
+      <img src="img/rsz_2rsz_1triviascript.png">
     </a>
     <nav>
-      <ul>
+      <ul id="nav">
         <li><a href="index.html" class="selected">Home</a></li>
         <li><a href="category.html">Category</a></li>
         <li><a href="score.html">Score</a></li>
@@ -29,9 +22,86 @@
       </ul>
     </nav>
   </header>
+
+
+  
+  <body>
+    <audio src = "img/beautiful.mp3" autoplay = "autoplay"></audio>
+    <div class = "contact-form">
+      <!-- <img src = "/img/images.jpeg" alt = "" class = "avatar"> -->
+      <form action = "" >
+        <h3>GamerTag</h3>
+        <input type = "GamerTag" placeholder = "EnterGamerTag">
+        <input type = "submit" value = "Sign In">
+      </form>
+    </div>
+  </body>
+
+  <main>
+
+      <!-- <div id="quiz"></div>
+      <button id="submit">Get Score</button>
+      <div id="scores"></div> -->
+      <div class="form-area">
+        <h3>Contact Form</h3>
+        <form action="">
+          <input type="text" placeholder="enter your user name">
+          <input type="submit" value="Sign In">
+        </form>
+      </div>
+
+      <form id="quiz">
+        <!-- !--inputs added from js file--! -->
+        <fieldset id="questions0">
+          <!-- <legend></legend>
+          <label for="">
+            <input type="text">
+          </label> -->
+      </fieldset>
+      <fieldset id="questions1">
+        </fieldset>
+        <fieldset id="questions2">
+          </fieldset> 
+        <button id="submit">Get Score</button>
+      </form>
+      <div id="scores"></div>
+
+    </main>
+
+    <div id="categories">
+      <div class="categories" id="Fun" onclick="#"><img src="./img/fun.jpg" alt="category"></div>
+      <div class="categories" id="Military" onclick="#"><img src="./img/military.jpg" alt="military"></div>
+      <div class="categories" id="Movies" onclick="#"><img src="./img/movie.jpg" alt="category"></div>
+      <div class="categories" id="Sports" onclick="#"><img src="./img/sport.jpg" alt="category"></div>
+      <div class="categories" id="Programming" onclick="#"><img src="./img/coding.jpg" alt="category"></div>
+    </div>
+
+</div>
+<div id="container">
+  <div id="start">Start!</div>
+  <div id="quizMilitary" style="display: none">
+    <div id="question"></div>
+    <div id="qImg"></div>
+    <div id="choices">
+      <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+      <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+      <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+    </div>
+    <div id="timer">
+      <div id="counter"></div>
+      <div id="btimeLine"></div>
+      <div id="timeLine"></div>
+    </div>
+    <div id="progress"></div>
+  </div>
+  <div id="scoreContainer" style="display: none"></div>
+</div>
+
+
+<script src="JS/quiz.js"></script>
   <footer>
     <p>&copy; 2019 TriviaScript Team</p>
   </footer> 
-  <script src="js/app.js"></script>
+  <script src="/JS/app.js"></script>
 </body>
 </html>
