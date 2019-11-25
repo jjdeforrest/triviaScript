@@ -1,129 +1,129 @@
 'use strict';
 
-// things needed for the function
-// quiz questions
-// where to put the quiz
-// where to put the scores
-// a submit button
+// // things needed for the function
+// // quiz questions
+// // where to put the quiz
+// // where to put the scores
+// // a submit button
 
-// grabbing elements from html
-var quizContainer = document.getElementById('quiz');
-var scoresContainer = document.getElementById('scores');
-var submitButton = document.getElementById('submit');
+// // grabbing elements from html
+// var quizContainer = document.getElementById('quiz');
+// var scoresContainer = document.getElementById('scores');
+// var submitButton = document.getElementById('submit');
 
-// array objects for our questions
-var ourQuestions = [
-  {
-    question: 'What saying is the joker known for?',
-    answers: {
-      a: 'Why so serious',
-      b: 'Knock knock',
-      c: 'The world is your oyster'
-    },
-    correctAnswer: 'a'
-  },
-  {
-    question: 'Against what opposing team did Babe Ruth hit his first career home run?',
-    answers: {
-      a: 'Seattle Mariners',
-      b: 'New York Yankees',
-      c: 'Houston Astros',
-    },
-    correctAnswer: 'b'
-  },
-  {
-    question: 'How did the Navy SEALs get their name?',
-    answers: {
-      a: 'Swimming ability',
-      b: 'Favorite animal of the President daughter',
-      c: 'Sea air land',
-    },
-    correctAnswer: 'c'
+// // array objects for our questions
+// var ourQuestions = [
+//   {
+//     question: 'What saying is the joker known for?',
+//     answers: {
+//       a: 'Why so serious',
+//       b: 'Knock knock',
+//       c: 'The world is your oyster'
+//     },
+//     correctAnswer: 'a'
+//   },
+//   {
+//     question: 'Against what opposing team did Babe Ruth hit his first career home run?',
+//     answers: {
+//       a: 'Seattle Mariners',
+//       b: 'New York Yankees',
+//       c: 'Houston Astros',
+//     },
+//     correctAnswer: 'b'
+//   },
+//   {
+//     question: 'How did the Navy SEALs get their name?',
+//     answers: {
+//       a: 'Swimming ability',
+//       b: 'Favorite animal of the President daughter',
+//       c: 'Sea air land',
+//     },
+//     correctAnswer: 'c'
 
-  }
+//   }
 
-];
+// ];
 
-showQuiz(ourQuestions, quizContainer, scoresContainer, submitButton);
+// showQuiz(ourQuestions, quizContainer, scoresContainer, submitButton);
 
-// function which holds the quiz questions
-function showQuiz(questions, quizContainer, scoresContainer, submitButton){
+// // function which holds the quiz questions
+// function showQuiz(questions, quizContainer, scoresContainer, submitButton){
 
-  function showQuestions(questions, quizContainer){
+//   function showQuestions(questions, quizContainer){
 
-    var outcome = [];
-    var answers;
-    var letter;
+//     var outcome = [];
+//     var answers;
+//     var letter;
 
-    // we loop through each questions
-    for(var i = 0; i < questions.length; i++){
+//     // we loop through each questions
+//     for(var i = 0; i < questions.length; i++){
 
-      // the current list of answers should be an empty array
-      answers = [];
+//       // the current list of answers should be an empty array
+//       answers = [];
 
 
-      // loop through each answer available to a question
-      for(letter in questions[i].answers){
+//       // loop through each answer available to a question
+//       for(letter in questions[i].answers){
 
-        // add an html checkbox
-        answers.push(
-          '<label' + '<input type="radio" name="question ' + i + ' " value=" ' + letter + ' "> ' + letter + ': ' + questions[i].answers[letter] + '</label>'
-        );
-      }
+//         // add an html checkbox
+//         answers.push(
+//           '<label>' + '<input type="checkbox" name="question ' + i + ' " value=" ' + letter + ' "> ' + letter + ': ' + questions[i].answers[letter] + '</label>'
+//         );
+//       }
 
-      // pushing the question and the answer to the outcome
-      outcome.push(
-        '<div class="question">' + questions[i].question + '</div>' + '<div class="answers">' + answers.join('') + '</div>'
-      );
+//       // pushing the question and the answer to the outcome
+//       outcome.push(
+//         '<div class="question">' + questions[i].question + '</div>' + '<div class="answers">' + answers.join('') + '</div>'
+//       );
 
-    }
-    quizContainer.innerHTML = outcome.join('');
-  }
-  // showQuestions(questions, quizContainer);
+//     }
+//     quizContainer.innerHTML = outcome.join('');
+//   }
+//   // showQuestions(questions, quizContainer);
 
-  function showScores(questions, quizContainer, scoresContainer){
+//   function showScores(questions, quizContainer, scoresContainer){
 
-    var answerContainers = quizContainer.querySelectorAll('.answers');
+//     var answerContainers = quizContainer.querySelectorAll('.answers');
 
-    // keeping track of users answers
-    var userAnswer = '';
-    var correctNum = 0;
+//     // keeping track of users answers
+//     var userAnswer = '';
+//     var correctNum = 0;
 
-    // loop through each question
-    for(var i = 0; i < questions.length; i++){
+//     // loop through each question
+//     for(var i = 0; i < questions.length; i++){
 
-      // target the selected answer
-      userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+//       // target the selected answer
+//       userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
 
-      // conditional to check for correct answers
-      if(userAnswer === questions[i].correctAnswer){
+//       // conditional to check for correct answers
+//       if(userAnswer === questions[i].correctAnswer){
 
-        correctNum++;
+//         correctNum++;
 
-        answerContainers[i].innerHTML = 'You got it right buster!';
-      } else {
-        answerContainers[i].innerHTML = 'You are damn wrong!';
-      }
+//         answerContainers[i].innerHTML = 'You got it right buster!';
+//       } else {
+//         answerContainers[i].innerHTML = 'You are damn wrong!';
+//       }
 
-    }
-    // display the total correct number of answewrs
-    scoresContainer.innerHTML = correctNum + ' out of ' + questions.length;
-  }
+//     }
+//     // display the total correct number of answewrs
+//     scoresContainer.innerHTML = correctNum + ' out of ' + questions.length;
+//   }
 
-  showQuestions(questions, quizContainer);
+//   showQuestions(questions, quizContainer);
 
-  // when the user clicks on the submit button it shows them their score
+//   // when the user clicks on the submit button it shows them their score
 
-  function clickHandler(){
-    showScores(questions, quizContainer, scoresContainer);
+//   function clickHandler(){
+//     showScores(questions, quizContainer, scoresContainer);
 
-  }
+//   }
 
-  submitButton.addEventListener('click', clickHandler);
+//   submitButton.addEventListener('click', clickHandler);
 
-  // clickHandler();
+//   // clickHandler();
 
-}
+// }
 
   ///////////////////////////////////////////////////
  /////////   Famous People Category      ///////////
@@ -141,6 +141,7 @@ function IdentifyFamousPeople({ question = 'Who is this?' }, cropPicture, option
 
 var questionNumber = 0;
 var askQuestion = [];
+
 //adding all the objects to array
 var questionsArr = [];
 questionsArr.push(new IdentifyFamousPeople(' ', 'img/bradley.jpg', ['Bradley Cooper', 'Leonardo Di Caprio', 'Nicholas Cage'], 'option_1', 'img/bradleyFull.jpg'));
@@ -150,6 +151,7 @@ questionsArr.push(new IdentifyFamousPeople('', 'img/messi.jpg', ['Christiano Ron
 questionsArr.push(new IdentifyFamousPeople(' ', 'img/jennifer.jpg', ['Jennifer Lopez', 'Penelope Cruz', 'Jennifer Aniston'], 'option_1', 'img/jenniferFull.jpg'));
 
 var famousPeopleContainer = document.getElementById('famous_people');
+console.log(famousPeopleContainer)
 
 function getQuestion() {
     for (var i = questionNumber; i < questionsArr.length; i++ ){
@@ -177,11 +179,12 @@ getQuestion();
 
 
 //function to get text element
-function addTextElement(tag, attribute, value, famousPeopleContainer, text) {
+function addTextElement(tag, attribute, value, container, text) {
     var element = document.createElement(tag);
     element.setAttribute(attribute, value);
-    famousPeopleContainer.appendChild(element);
+    container.appendChild(element);
     element.textContent = text;
+    console.log(tag)
     return element;
 }
 
@@ -229,10 +232,11 @@ function clickHandler(event1) {
         var button  = addTextElement('button', 'id', 'next_button', famousPeopleContainer, 'Next');
 
         // debugger;
+        // option1.removeEventListener('click', clickHandler);
+        // option2.removeEventListener('click', clickHandler);
+        // option3.removeEventListener('click', clickHandler);
+        
         button.addEventListener('click', nextQuestion);
-        option1.removeEventListener('click', clickHandler);
-        option2.removeEventListener('click', clickHandler);
-        option3.removeEventListener('click', clickHandler);
     
 }
 
@@ -256,6 +260,39 @@ function nextQuestion (event2) {
     getQuestion();
     getOptions();
 }
+////////////////////////////////////////////
+///      programming                   ////
+//////////////////////////////////////////
+
+
+function ProgrammingQuestion (question, options, answer) {
+  this.question = question;
+  this.options = options;
+  this.answer = answer;
+}
+
+var programQuestionArr = [];
+
+programQuestionArr.push(new ProgrammingQuestion('What is the correct way to write a JS array?', ['var colors = "red", "green", "blue"', 'var colors = ["red", "green", "blue"]', 'var colors = (1:"red", 2:"green", 3:"blue")'], 'option_2'));
+programQuestionArr.push(new ProgrammingQuestion('What does '==='mean in javascript?', [`lol. no such thing as '==='`, 'equal value and equal type', 'equal variables only' ], 'option_1'));
+programQuestionArr.push(new ProgrammingQuestion('What is the JavaScript syntax for printing values in Console?', ['print(5)', 'console.log(5);(correct)', 'console.print(5);'], 'option_2'));
+programQuestionArr.push(new ProgrammingQuestion('I designed a mechanical computer called the Analytical Engine who am I?',[' Bill Gates', 'Sylvester Stallone', 'Charles Babbage(correct)'], 'option_3'));
+programQuestionArr.push(new ProgrammingQuestion('What website do we use for version control?', ['GitHub', 'Slack', 'Googledocs'], 'option_1'));
 
 
 
+function getProgrammingQuestion() {
+  for (var i = 0; i < programQuestionArr.length; i++){
+    //Question Element
+    var programmingContainer = document.getElementById('programming');
+    console.log(document.getElementById('programming'))
+    var element = document.createElement('h2');
+
+    programmingContainer.appendChild(element);
+    console.log(element);
+    // addTextElement('h2', 'id', 'programmingQuestion', programmingContainer, programQuestionArr[i].question);
+    element.textContent = programQuestionArr[i].question;
+  }
+}
+console.log('test')
+getProgrammingQuestion();
