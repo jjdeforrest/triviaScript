@@ -1,4 +1,8 @@
 'use strict';
+<<<<<<< HEAD
+// question-functions
+=======
+>>>>>>> da65d2c097225979de25aac9016925e3a184c0cf
 
 // things needed for the function
 // quiz questions
