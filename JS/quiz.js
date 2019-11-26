@@ -1,6 +1,6 @@
 // select all elements
-var start = document.getElementById('start');
-var quiz = document.getElementById('quizMilitary');
+// var start = document.getElementById('start');
+// var quiz = document.getElementById('quizMilitary');
 var question = document.getElementById('question');
 var qImg = document.getElementById('qImg');
 var choiceA = document.getElementById('A');
@@ -66,7 +66,7 @@ function renderQuestion() {
   choiceC.innerHTML = q.choiceC;
 }
 
-start.addEventListener("click", startQuiz);
+// start.addEventListener("click", startQuiz);
 
 // start quiz
 function startQuiz() {
@@ -152,6 +152,7 @@ function scoreRender() {
   scoreDiv.innerHTML = `You got ${score} questions correct and your score is ${scorePerCent} %`;
 }
 
+startQuiz();
 
 
 
