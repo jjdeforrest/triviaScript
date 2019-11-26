@@ -225,7 +225,7 @@ footer {
   
 } */
 
-#categories{
+#categories {
   display: inline-block;
   width : 80%;
   margin-top: 30vh;
@@ -234,12 +234,38 @@ footer {
   margin-bottom: 15vh;
 }
 
+#categories img{
+  /* -webkit-transition: scale(1); */
+  transform: scale(1);
+  /* -webkit-transition: .3s ease-in-out; */
+  transition: .3s ease-in-out;
+
+}
+
+#categories a:hover img{
+  /* -webkit-transform: scale(1.3); */
+  transform: scale(1.1);
+/* opacity: 2; */
+}
+
 div a img{
   margin: 10px;
   width: 200px;
   height: 200px;
 }
 
+#start{
+  background-color: aqua;
+  border: none;
+  color: white;
+  padding: 20px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  top: 150%;
+  left: 150%;
+}
 
 
 /*  
@@ -253,6 +279,7 @@ div a img{
     box-shadow: 0px 5px 15px 0px;
     position: relative;
 }
+
 #start{
     font-size: 1.5em;
     font-weight: bolder;
@@ -267,6 +294,7 @@ div a img{
     top:50px;
     color : lightgrey;
 }
+
 #start:hover{
     border: 3px solid lightseagreen;
     color : lightseagreen;
