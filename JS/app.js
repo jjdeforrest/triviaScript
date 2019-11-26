@@ -1,6 +1,5 @@
 'use strict';
 
-'use strict';
 // question-functions
 // things needed for the function
 // quiz questions
