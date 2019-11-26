@@ -15,11 +15,11 @@ var submitButton = document.getElementById('submit');
 // array objects for our questions
 var ourQuestions = [
   {
-    question: 'What saying is the joker known for?',
+    question: 'Who was the first player in NBA history to be elected league MVP by a unanimous vote??',
     answers: {
-      a: 'Why so serious',
-      b: 'Knock knock',
-      c: 'The world is your oyster'
+      a: 'Stephen Curry',
+      b: 'Kurt Cousins',
+      c: 'Kevin Durant'
     },
     correctAnswer: 'a'
   },
@@ -33,16 +33,33 @@ var ourQuestions = [
     correctAnswer: 'b'
   },
   {
-    question: 'How did the Navy SEALs get their name?',
+    question: 'What player won All-Star Game MVP, NBA MVP, and NBA Finals MVP awards in 2000?',
     answers: {
       a: 'Swimming ability',
       b: 'Favorite animal of the President daughter',
-      c: 'Sea air land',
+      c: 'Shaquille Oneal',
     },
     correctAnswer: 'c'
 
+  },
+  {
+    question: 'Which man won the 100m in a world record time of 9.58 seconds?',
+    answers: {
+      a: 'JB Tellez',
+      b: 'Usain Bolt',
+      c: 'Benjamin Franklin',
+    },
+    correctAnswer: 'b'
+  },
+  {
+    question: 'Who is the most decorated Olympian?',
+    answers: {
+      a: 'Michael Phelps',
+      b: 'Barack Obama',
+      c: 'Ellen Degeneres',
+    },
+    correctAnswer: 'a'
   }
-
 ];
 
 showQuiz(ourQuestions, quizContainer, scoresContainer, submitButton);
@@ -90,7 +107,6 @@ function showQuiz(questions, quizContainer, scoresContainer, submitButton){
 
   //   // keeping track of users answers
   //   var userAnswer = '';
-  //   var correctNum = 0;
 
   //   // loop through each question
   //   for(var i = 0; i < questions.length; i++){
@@ -134,28 +150,87 @@ function showQuiz(questions, quizContainer, scoresContainer, submitButton){
 }
 
 // var userAnswer = '';
-// var correctNum = 0;
+var correctNum = 0;
 
+
+// handle click handler for all functions
 function submitHandler(event){
 
-  // var answerData = new inputData()
-
   event.preventDefault();
-  console.log('submitHandler', event.target.answerRadio0.value);
-  console.log('submitHandler', event.target.answerRadio1.value);
-  console.log('submitHandler', event.target.answerRadio2.value);
+  var userAnswer0 = event.target.answerRadio0.value;
+  var userAnswer1 = event.target.answerRadio1.value;
+  var userAnswer2 = event.target.answerRadio2.value;
+  var userAnswer3 = event.target.answerRadio3.value;
+  var userAnswer4 = event.target.answerRadio4.value;
 
-  var type = document.getElementById('quiz');
-  console.log('what is this', type)
-  if(type[0].checked){
-    alert("you got it right");
+
+  var userLetter0 = userAnswer0.charAt(userAnswer0.length - 1);
+  var userLetter1 = userAnswer1.charAt(userAnswer1.length - 1);
+  var userLetter2 = userAnswer2.charAt(userAnswer2.length - 1);
+  var userLetter3 = userAnswer3.charAt(userAnswer3.length - 1);
+  var userLetter4 = userAnswer4.charAt(userAnswer4.length - 1);
+
+  var userLetters = [userLetter0, userLetter1, userLetter2, userLetter3, userLetter4];
+
+
+  console.log(userLetters);
+
+  for(var i = 0; i < ourQuestions.length; i++){
+
+    var currentLetter = userLetters[i];
+
+    console.log('current letter', currentLetter);
+    console.log('correct answer', ourQuestions[i].correctAnswer);
+    if(currentLetter === ourQuestions[i].correctAnswer){
+      correctNum++;
+    }
+    // if(userLetter1 === ourQuestions[1].correctAnswer){
+    //   correctNum++;
+    // }
+    // else{
+    //   // userLetter0.style.color = 'red';
+
+    //   alert('Please try again');
+    // }
+
+    // if(userLetter2 === ourQuestions[2].correctAnswer){
+    //   correctNum++;
+    // }
+    // else{
+    //   // userLetter0.style.color = 'red';
+
+    //   alert('Please try again');
+    // }
+
+    // if(userAnswer3 === ourQuestions[3].correctAnswer){
+    //   correctNum++;
+    // } else {
+    //   alert('Please try again');
+    // }
+
+    // if(userAnswer4 === ourQuestions[4].correctAnswer){
+    //   correctNum++;
+    // } else {
+    //   alert('Please try again');
+    // }
+
   }
-  else if(type[1].checked){
-    alert("you are also right");
-  }
-  else if(type[2].checked){
-    alert("you are so right");
-  }
+
+  scoresContainer.innerHTML = correctNum + ' out of ' + ourQuestions.length;
+
+
+
+  // var type = document.getElementById('quiz');
+  // console.log('what is this', type)
+  // if(type[0].checked){
+  //   alert("you got it right");
+  // }
+  // else if(type[1].checked){
+  //   alert("you are also right");
+  // }
+  // else if(type[2].checked){
+  //   alert("you are so right");
+  // }
   // showScores();
   // showScores(questions, quizContainer, scoresContainer);
 
