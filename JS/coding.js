@@ -1,5 +1,4 @@
 // select all elements
-// var start = document.getElementById('start');
 var quiz = document.getElementById('quizMilitary');
 var question = document.getElementById('question');
 var qImg = document.getElementById('qImg');
@@ -73,13 +72,10 @@ function renderQuestion() {
   choiceC.innerHTML = q.choiceC;
 }
 
-// start.addEventListener("click", startQuiz);
 
 // start quiz
 function startQuiz() {
-  // start.style.display = "none";
   renderQuestion();
-//   quizMilitary.style.display = 'block';
   renderProgress();
   renderCounter();
   TIMER = setInterval(renderCounter, 1000); // 1000ms = 1s
@@ -93,7 +89,6 @@ function renderProgress() {
 }
 
 // counter render
-
 function renderCounter() {
   if (count <= questionTime) {
     counter.innerHTML = count;
@@ -115,7 +110,6 @@ function renderCounter() {
 }
 
 // checkAnwer
-
 function checkAnswer(answer) {
   if (answer === questionsCoding[currentQuestion].correct) {
     // answer is correct
