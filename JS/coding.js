@@ -1,6 +1,6 @@
 // select all elements
 // var start = document.getElementById('start');
-// var quiz = document.getElementById('quizMilitary');
+var quiz = document.getElementById('quizMilitary');
 var question = document.getElementById('question');
 var qImg = document.getElementById('qImg');
 var choiceA = document.getElementById('A');
