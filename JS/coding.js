@@ -1,6 +1,5 @@
 // select all elements
-// var start = document.getElementById('start');
-// var quiz = document.getElementById('quizMilitary');
+var quiz = document.getElementById('quizMilitary');
 var question = document.getElementById('question');
 var qImg = document.getElementById('qImg');
 var choiceA = document.getElementById('A');
@@ -11,43 +10,50 @@ var timeLine = document.getElementById('timeLine');
 var progress = document.getElementById('progress');
 var scoreDiv = document.getElementById('scoreContainer');
 
-
 // create our questions
-var questionsMilitary = [
+var questionsCoding = [
   {
-    question: 'How did the Navy SEALs get their name?',
-    imgSrc: 'img/seal.jpg',
-    choiceA: 'Sea air land',
-    choiceB: 'Swimming ability',
-    choiceC: 'Favorite animal of the President;s daughter',
-    correct: 'A'
+    question: 'Inside which HTML element do we put the JavaScript?',
+    imgSrc: 'img/coding.jpg',
+    choiceA: 'js',
+    choiceB: 'javascript',
+    choiceC: 'script',
+    correct: 'C'
   }, {
-    question: 'Who is the Commander in Chief of the United States armed forces?',
-    imgSrc: 'img/cat.jpg',
-    choiceA: 'Chairman of Joint Chiefs of Staff',
-    choiceB: 'President',
-    choiceC: 'Five star general',
+    question: 'What is the correct way to write a JS array?',
+    imgSrc: 'img/coding.jpg',
+    choiceA: 'var colors = "red", "green", "blue"',
+    choiceB: 'var colors = ["red", "green", "blue"]',
+    choiceC: 'var colors = (1:"red", 2:"green", 3:"blue")',
     correct: 'B'
   }, {
-    question: 'Before the \"all-voluntary\" military, how were young men compelled to become soldiers?',
-    imgSrc: 'img/boot.jpg',
-    choiceA: 'Breeze',
-    choiceB: 'Grab',
-    choiceC: 'Draft',
-    correct: 'C'
+    question: 'What tag is used to define an image – or add an image – to an HTML page?',
+    imgSrc: 'img/coding.jpg',
+    choiceA: 'img',
+    choiceB: 'div',
+    choiceC: 'meta',
+    correct: 'A'
   }
   , {
-    question: 'What federal building is headquarters for the U.S. Armed Forces?',
-    imgSrc: 'img/head.jpg',
-    choiceA: 'White house',
-    choiceB: 'Fort Knox',
-    choiceC: 'Pentagon',
-    correct: 'C'
+    question: 'Java was originally developed by James Gosling in which year?',
+    imgSrc: 'img/coding.jpg',
+    choiceA: '1995',
+    choiceB: '1996',
+    choiceC: '2017',
+    correct: 'A'
+  },
+  {
+    question: 'An inherited class is called a?',
+    imgSrc: 'img/coding.jpg',
+    choiceA: 'Object Oriented Programming',
+    choiceB: 'Subclass of its parent class',
+    choiceC: 'HTML element',
+    correct: 'B'
   }
 
 ];
 // variables
-var lastQuestion = questionsMilitary.length - 1;
+var lastQuestion = questionsCoding.length - 1;
 var currentQuestion = 0;
 var count = 0;
 var questionTime = 10; // 10s
@@ -57,7 +63,7 @@ var TIMER;
 var score = 0;
 // render a question
 function renderQuestion() {
-  var q = questionsMilitary[currentQuestion];
+  var q = questionsCoding[currentQuestion];
 
   question.innerHTML = "<p>" + q.question + "</p>";
   qImg.innerHTML = "<img src=" + q.imgSrc + ">";
@@ -66,13 +72,10 @@ function renderQuestion() {
   choiceC.innerHTML = q.choiceC;
 }
 
-// start.addEventListener("click", startQuiz);
 
 // start quiz
 function startQuiz() {
-  // start.style.display = "none";
   renderQuestion();
-  quizMilitary.style.display = 'block';
   renderProgress();
   renderCounter();
   TIMER = setInterval(renderCounter, 1000); // 1000ms = 1s
@@ -86,7 +89,6 @@ function renderProgress() {
 }
 
 // counter render
-
 function renderCounter() {
   if (count <= questionTime) {
     counter.innerHTML = count;
@@ -108,9 +110,8 @@ function renderCounter() {
 }
 
 // checkAnwer
-
 function checkAnswer(answer) {
-  if (answer === questionsMilitary[currentQuestion].correct) {
+  if (answer === questionsCoding[currentQuestion].correct) {
     // answer is correct
     score++;
     // change progress color to green
@@ -146,7 +147,7 @@ function scoreRender() {
   scoreDiv.style.display = 'block';
 
   // calculate the amount of question percent answered by the user
-  var scorePerCent = Math.round(100 * score / questionsMilitary.length);
+  var scorePerCent = Math.round(100 * score / questionsCoding.length);
 
 
   scoreDiv.innerHTML = `You got ${score} questions correct and your score is ${scorePerCent} %`;
