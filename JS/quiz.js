@@ -153,21 +153,3 @@ function scoreRender() {
 }
 
 startQuiz();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
