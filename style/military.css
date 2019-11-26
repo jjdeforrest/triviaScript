@@ -1,3 +1,50 @@
+ 
+header {
+    background-color: black;
+    top: 0%;
+    position: fixed;
+    width: 100%;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/purple-abstract.jpg");
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* ***********INDEX************ */
+  
+  nav{
+    background-color: black;
+    top: 0px;
+    text-align: center;
+  }
+  
+  nav li{
+    display: inline;
+    margin: 50px;
+    position: relative;
+    border: 10px;
+    bottom: 30px;
+    /* left: 50px; */
+  }
+  
+  a {
+    color: #ffffff;
+  }
+
+  footer {
+    color: #e100ff;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    text-align: center;
+  }
+ 
+ 
+ 
+ 
  #gap{
      height: 100px;
 
@@ -5,7 +52,8 @@
 
  }
 #container{
-    /* margin : 300px; */
+
+    margin-left: 11vw;
     background-color: white;
     height: 480px;
     width : 80%;
