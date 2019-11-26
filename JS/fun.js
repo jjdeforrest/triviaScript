@@ -1,10 +1,7 @@
 'use strict';
-
 ///////////////////////////////////////////////////
 /////////   Famous People Category      ///////////
 ///////////////////////////////////////////////////
-
-
 //creating object for identifying famous people
 function IdentifyFamousPeople({ question = 'Who is this?' }, cropPicture, options, answer, fullPicture) {
   this.question = question;
@@ -15,7 +12,6 @@ function IdentifyFamousPeople({ question = 'Who is this?' }, cropPicture, option
 }
 
 var correctAnswer = 0;
-
 var questionNumber = 0;
 var askQuestion = [];
 //adding all the objects to array
@@ -32,26 +28,19 @@ function getQuestion() {
   for (var i = questionNumber; i < questionsArr.length; i++) {
     //Question Element
     var question = addTextElement('h2', 'id', 'question', famousPeopleContainer, questionsArr[i].question);
-
     //Image Element
     var cropImage = addImage('img', 'id', 'crop_image', famousPeopleContainer, questionsArr[i].cropPicture);
-
     //Answer option element
     var ulElement = addTextElement('ul', 'id', 'ul_element', famousPeopleContainer);
-
     //display all three answer options
     for (var j = 0; j < questionsArr[i].options.length; j++) {
       var option = addTextElement('li', 'id', `option_${j + 1}`, ulElement, questionsArr[i].options[j]);
     }
     break;
   }
-
   console.log('questionNumber', questionNumber);
 }
 getQuestion();
-
-
-
 
 //function to get text element
 function addTextElement(tag, attribute, value, famousPeopleContainer, text) {
@@ -71,14 +60,12 @@ function addImage(tag, attribute, value, famousPeopleContainer, image) {
   return element;
 }
 
-
 //get options and add event listeners
 function getOptions() {
   //get three options and store in variable
   var option1 = document.getElementById('option_1');
   var option2 = document.getElementById('option_2');
   var option3 = document.getElementById('option_3');
-
   console.log('fdsffsdfsdfsdfsfs');
   //listen to the click event for each option
   option1.addEventListener('click', clickHandler);
@@ -95,7 +82,6 @@ function clickHandler(event1) {
   var option1 = document.getElementById('option_1');
   var option2 = document.getElementById('option_2');
   var option3 = document.getElementById('option_3');
-
   option1.removeEventListener('click', clickHandler);
   option2.removeEventListener('click', clickHandler);
   option3.removeEventListener('click', clickHandler);
@@ -112,17 +98,13 @@ function clickHandler(event1) {
     addTextElement('h3', 'id', 'answer', famousPeopleContainer, 'Incorrect!');
     //display full image
     addImage('img', 'id', 'full_image', famousPeopleContainer, questionsArr[questionNumber].fullPicture);
-
   }
   questionNumber++;
 
   // debugger;
   var button = addTextElement('button', 'id', 'next_button', famousPeopleContainer, 'Next');
   button.addEventListener('click', nextQuestion);
-
 }
-
-
 
 function nextQuestion(event2) {
   var id = event2.target.id;

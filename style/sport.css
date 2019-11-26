@@ -1,0 +1,76 @@
+body {
+  text-align: center;
+}
+#quiz {
+  display: inline-block;
+  font-size: 2em;
+  transition-duration: 0.4s;
+  margin-top: 2%;
+  font-family: 'Kalam', cursive;
+}
+
+
+#submit{
+  font-size: 32px;
+  border-radius: 12px;
+  padding: 5px;
+  transition-duration: 0.4s;
+}
+
+#submit:hover{
+  background-color: grey;
+}
+
+/* sport category navbar */
+header {
+  background-color: black;
+  top: 0%;
+  width: 100%;
+}
+
+nav{
+  background-color: black;
+  top: 0px;
+  text-align: center;
+}
+
+#nav li{
+  display: inline;
+  margin: 50px;
+  position: relative;
+  border: 10px;
+  bottom: 30px;
+}
+
+#nav li a{
+  text-decoration: none;
+}
+
+#nav li a:hover{
+  text-decoration: none;
+  background-color: #ddd;
+  color: black;
+}
+
+a {
+  color: #ffffff;
+}
+
+#crop_image{
+    width:80px;
+    height: auto;
+}
+
+#full_image {
+    width: 300px;
+    height: auto;
+}
+
+footer {
+  color: black;
+  /* position: fixed; */
+  bottom: 0%;
+  width: 100%;
+  text-align: center;
+}
+
