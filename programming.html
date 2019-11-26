@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style/style.css">
-  <link rel="stylesheet" href="style/military.css">
-  <link rel="stylesheet" type="text/css" href="style/reset.css">
 
-  <title>Military</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/military.css">
+    <link rel="stylesheet" type="text/css" href="style/reset.css">
+
+    <title>Military</title>
 </head>
+
 <body>
     <header>
         <a href="index.html" id="logo">
-          <img src="img/rsz_2rsz_1triviascript.png">
+            <img src="img/logo-black.png">
         </a>
         <nav>
-          <ul id="nav">
-            <li><a href="index.html" class="selected">Home</a></li>
-            <li><a href="score.html">Score</a></li>
-            <li><a href="about.html">Team</a></li>
-
-          </ul>
+            <ul id="nav">
+                <li><a href="index.html" class="selected"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="score.html">Score</a></li>
+                <li><a href="about.html">Team</a></li>
+                <!-- <li><a href="category.html">Category</a></li> -->
+            </ul>
         </nav>
-      </header>
+    </header>
     <!-- <div id="categories">
         <div class="categories" id="Fun" onclick="#"><img src="./img/fun.jpg" alt="category"></div>
         <div class="categories" id="Military" onclick="#"><img src="./img/military.jpg" alt="military"></div>
@@ -34,28 +36,33 @@
   
   </div> -->
 
-  <div id ="gap"></div>
-  <div id="container">
-    <!-- <button id="start">Start!</button> -->
-    <div id="quizMilitary">
-      <div id="question"></div>
-      <div id="qImg"></div>
-      <div id="choices">
-        <div class="choice" id="A" onclick="checkAnswer('A')"></div>
-        <div class="choice" id="B" onclick="checkAnswer('B')"></div>
-        <div class="choice" id="C" onclick="checkAnswer('C')"></div>
-      </div>
-      <div id="timer">
-        <div id="counter"></div>
-        <div id="btimeLine"></div>
-        <div id="timeLine"></div>
-      </div>
-      <div id="progress"></div>
+    <div id="gap"></div>
+    <div id="container">
+        <!-- <button id="start">Start!</button> -->
+        <div id="quizMilitary">
+            <div id="question"></div>
+            <div id="qImg"></div>
+            <div id="choices">
+                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+            </div>
+            <div id="timer">
+                <div id="counter"></div>
+                <div id="btimeLine"></div>
+                <div id="timeLine"></div>
+            </div>
+            <div id="progress"></div>
+        </div>
+        <div id="scoreContainer"></div>
     </div>
-    <div id="scoreContainer"></div>
-  </div>
-  <script src="JS/coding.js"></script>
+    <script src="JS/coding.js"></script>
+
+    <footer>
+        <p>&copy; 2019 TriviaScript Team</p>
+    </footer>
 </body>
+
 </html>
 
 

@@ -1,4 +1,5 @@
 // select all elements
+var quiz = document.getElementById('quizMilitary');
 var question = document.getElementById('question');
 var qImg = document.getElementById('qImg');
 var choiceA = document.getElementById('A');
