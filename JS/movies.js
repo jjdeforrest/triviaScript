@@ -17,32 +17,49 @@ var ourQuestions = [
   {
     question: 'What saying is the joker known for?',
     answers: {
-      a: 'Why so serious',
-      b: 'Knock knock',
-      c: 'The world is your oyster'
-    },
-    correctAnswer: 'a'
-  },
-  {
-    question: 'Against what opposing team did Babe Ruth hit his first career home run?',
-    answers: {
-      a: 'Seattle Mariners',
-      b: 'New York Yankees',
-      c: 'Houston Astros',
+      a: 'The world is your oyster',
+      b: 'Why so serious',
+      c: 'Knock knock'
     },
     correctAnswer: 'b'
   },
   {
-    question: 'How did the Navy SEALs get their name?',
+    question: 'Thanos said',
     answers: {
-      a: 'Swimming ability',
-      b: 'Favorite animal of the President daughter',
-      c: 'Sea air land',
+      a: 'THE HARDEST CHOICES REQUIRE THE STRONGEST WILLS',
+      b: 'The avengers are evil',
+      c: 'want to be an avenger',
+    },
+    correctAnswer: 'a'
+  },
+  {
+    question: 'Bane from batman said',
+    answers: {
+      a: 'Meet you at the bbq',
+      b: 'Bat hunting is legit',
+      c: ' I am necessary evil',
     },
     correctAnswer: 'c'
 
+  },
+  {
+    question: 'From what movie does the phrase "You are killing me smalls!" come from?',
+    answers: {
+      a: 'The Goonies',
+      b: 'The Sandlot',
+      c: 'Gone Girl',
+    },
+    correctAnswer: 'b'
+  },
+  {
+    question: 'In the movie, Rocky, what are the names of Rocky Balboa two pet turtles?',
+    answers: {
+      a: 'Cuff and Link',
+      b: 'Yin and Yang',
+      c: 'Buster and Douglas',
+    },
+    correctAnswer: 'a'
   }
-
 ];
 
 showQuiz(ourQuestions, quizContainer, scoresContainer, submitButton);
@@ -90,7 +107,6 @@ function showQuiz(questions, quizContainer, scoresContainer, submitButton){
 
   //   // keeping track of users answers
   //   var userAnswer = '';
-  //   var correctNum = 0;
 
   //   // loop through each question
   //   for(var i = 0; i < questions.length; i++){
@@ -134,28 +150,87 @@ function showQuiz(questions, quizContainer, scoresContainer, submitButton){
 }
 
 // var userAnswer = '';
-// var correctNum = 0;
+var correctNum = 0;
 
+
+// handle click handler for all functions
 function submitHandler(event){
 
-  // var answerData = new inputData()
-
   event.preventDefault();
-  console.log('submitHandler', event.target.answerRadio0.value);
-  console.log('submitHandler', event.target.answerRadio1.value);
-  console.log('submitHandler', event.target.answerRadio2.value);
+  var userAnswer0 = event.target.answerRadio0.value;
+  var userAnswer1 = event.target.answerRadio1.value;
+  var userAnswer2 = event.target.answerRadio2.value;
+  var userAnswer3 = event.target.answerRadio3.value;
+  var userAnswer4 = event.target.answerRadio4.value;
 
-  var type = document.getElementById('quiz');
-  console.log('what is this', type)
-  if(type[0].checked){
-    alert("you got it right");
+
+  var userLetter0 = userAnswer0.charAt(userAnswer0.length - 1);
+  var userLetter1 = userAnswer1.charAt(userAnswer1.length - 1);
+  var userLetter2 = userAnswer2.charAt(userAnswer2.length - 1);
+  var userLetter3 = userAnswer3.charAt(userAnswer3.length - 1);
+  var userLetter4 = userAnswer4.charAt(userAnswer4.length - 1);
+
+  var userLetters = [userLetter0, userLetter1, userLetter2, userLetter3, userLetter4];
+
+
+  console.log(userLetters);
+
+  for(var i = 0; i < ourQuestions.length; i++){
+
+    var currentLetter = userLetters[i];
+
+    console.log('current letter', currentLetter);
+    console.log('correct answer', ourQuestions[i].correctAnswer);
+    if(currentLetter === ourQuestions[i].correctAnswer){
+      correctNum++;
+    }
+    // if(userLetter1 === ourQuestions[1].correctAnswer){
+    //   correctNum++;
+    // }
+    // else{
+    //   // userLetter0.style.color = 'red';
+
+    //   alert('Please try again');
+    // }
+
+    // if(userLetter2 === ourQuestions[2].correctAnswer){
+    //   correctNum++;
+    // }
+    // else{
+    //   // userLetter0.style.color = 'red';
+
+    //   alert('Please try again');
+    // }
+
+    // if(userAnswer3 === ourQuestions[3].correctAnswer){
+    //   correctNum++;
+    // } else {
+    //   alert('Please try again');
+    // }
+
+    // if(userAnswer4 === ourQuestions[4].correctAnswer){
+    //   correctNum++;
+    // } else {
+    //   alert('Please try again');
+    // }
+
   }
-  else if(type[1].checked){
-    alert("you are also right");
-  }
-  else if(type[2].checked){
-    alert("you are so right");
-  }
+
+  scoresContainer.innerHTML = correctNum + ' out of ' + ourQuestions.length;
+
+
+
+  // var type = document.getElementById('quiz');
+  // console.log('what is this', type)
+  // if(type[0].checked){
+  //   alert("you got it right");
+  // }
+  // else if(type[1].checked){
+  //   alert("you are also right");
+  // }
+  // else if(type[2].checked){
+  //   alert("you are so right");
+  // }
   // showScores();
   // showScores(questions, quizContainer, scoresContainer);
 
