@@ -142,7 +142,7 @@ function submitHandler(event){
   console.log('submitHandler', event.target.answerRadio0.value);
   console.log('submitHandler', event.target.answerRadio1.value);
   console.log('submitHandler', event.target.answerRadio2.value);
-
+  // showScores();
 
 
 }
