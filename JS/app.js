@@ -83,43 +83,43 @@ function showQuiz(questions, quizContainer, scoresContainer, submitButton){
     }
   }
 
-  function showScores(questions, quizContainer, scoresContainer){
+  // function showScores(questions, quizContainer, scoresContainer){
 
-    var answerContainers = quizContainer.querySelectorAll('.answers');
-    console.log(answerContainers);
+  //   var answerContainers = quizContainer.querySelectorAll('.answers');
+  //   console.log(answerContainers);
 
-    // keeping track of users answers
-    var userAnswer = '';
-    var correctNum = 0;
+  //   // keeping track of users answers
+  //   var userAnswer = '';
+  //   var correctNum = 0;
 
-    // loop through each question
-    for(var i = 0; i < questions.length; i++){
+  //   // loop through each question
+  //   for(var i = 0; i < questions.length; i++){
 
-      console.log(answerContainers);
-      // target the selected answer
-      var currentContainer = answerContainers[i];
-      console.log('----------', currentContainer);
-      userAnswer = document.querySelector('input[name=question'+i+']:checked');
-      // userAnswer = (currentContainer.querySelector('input[name=question'+i+']:checked'));
+  //     console.log(answerContainers);
+  //     // target the selected answer
+  //     var currentContainer = answerContainers[i];
+  //     console.log('----------', currentContainer);
+  //     userAnswer = document.querySelector('input[name=question'+i+']:checked');
+  //     userAnswer = (currentContainer.querySelector('input[name=question'+i+']:checked'));
 
-      console.log(userAnswer);
+  //     console.log(userAnswer);
 
-      // conditional to check for correct answers
-      if(userAnswer === questions[i].correctAnswer){
+  //     // conditional to check for correct answers
+  //     if(userAnswer === questions[i].correctAnswer){
 
-        correctNum++;
+  //       correctNum++;
 
-        answerContainers[i].style.color = 'green';
-      } else {
-        answerContainers[i].style.color = 'red';
-      }
+  //       answerContainers[i].style.color = 'green';
+  //     } else {
+  //       answerContainers[i].style.color = 'red';
+  //     }
 
-    }
-    showScores(questions, quizContainer, scoresContainer);
+  //   }
+  //   showScores(questions, quizContainer, scoresContainer);
 
-    // display the total correct number of answewrs
-    scoresContainer.innerHTML = correctNum + ' out of ' + questions.length;
-  }
+  //   // display the total correct number of answewrs
+  //   scoresContainer.innerHTML = correctNum + ' out of ' + questions.length;
+  // }
 
   showQuestions(questions, quizContainer);
 
@@ -133,6 +133,9 @@ function showQuiz(questions, quizContainer, scoresContainer, submitButton){
   // submitButton.addEventListener('click', clickHandler);
 }
 
+// var userAnswer = '';
+// var correctNum = 0;
+
 function submitHandler(event){
 
   // var answerData = new inputData()
@@ -141,7 +144,20 @@ function submitHandler(event){
   console.log('submitHandler', event.target.answerRadio0.value);
   console.log('submitHandler', event.target.answerRadio1.value);
   console.log('submitHandler', event.target.answerRadio2.value);
+
+  var type = document.getElementById('quiz');
+  console.log('what is this', type)
+  if(type[0].checked){
+    alert("you got it right");
+  }
+  else if(type[1].checked){
+    alert("you are also right");
+  }
+  else if(type[2].checked){
+    alert("you are so right");
+  }
   // showScores();
+  // showScores(questions, quizContainer, scoresContainer);
 
 
 }

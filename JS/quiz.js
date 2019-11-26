@@ -70,7 +70,7 @@ start.addEventListener("click", startQuiz);
 
 // start quiz
 function startQuiz() {
-  start.style.display = "none";
+  // start.style.display = "none";
   renderQuestion();
   quizMilitary.style.display = 'block';
   renderProgress();
