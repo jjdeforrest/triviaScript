@@ -2,7 +2,6 @@
 header {
   background-color: black;
   top: 0%;
-  /* position: fixed; */
   width: 100%;
 }
 
@@ -19,12 +18,22 @@ nav{
   text-align: center;
 }
 
-nav li{
+#nav li{
   display: inline;
   margin: 50px;
   position: relative;
   border: 10px;
   bottom: 30px;
+}
+
+#nav li a{
+  text-decoration: none;
+}
+
+#nav li a:hover{
+  text-decoration: none;
+  background-color: #ddd;
+  color: black;
 }
 
 a {
@@ -42,7 +51,7 @@ a {
 }
   
 footer {
-  color: #e100ff;
+  color: white;
   position: fixed;
   bottom: 0%;
   width: 100%;
@@ -53,8 +62,8 @@ footer {
   display: inline-block;
   width : 80%;
   margin-top: 30vh;
-  margin-left: 11.3vw;
-  margin-right: 15vw;
+  margin-left: 20vw;
+  /* margin-right: 15vw; */
   margin-bottom: 15vh;
 }
 

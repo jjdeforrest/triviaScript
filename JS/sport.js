@@ -15,7 +15,7 @@ var submitButton = document.getElementById('submit');
 // array objects for our questions
 var ourQuestions = [
   {
-    question: 'Who was the first player in NBA history to be elected league MVP by a unanimous vote??',
+    question: 'Who was the first player in NBA history to be elected league MVP by a unanimous vote?',
     answers: {
       a: 'Stephen Curry',
       b: 'Kurt Cousins',
