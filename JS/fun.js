@@ -111,6 +111,7 @@ function clickHandler(event1) {
   // debugger;
   var button = addTextElement('button', 'id', 'next_button', famousPeopleContainer, 'Next');
   button.addEventListener('click', nextQuestion);
+  localStorage.setItem(answer, questionNumber, correctAnswer, id);
 }
 
 function nextQuestion(event2) {
@@ -134,6 +135,7 @@ function nextQuestion(event2) {
     console.log('answer', questionNumber);
     return;
   }
+  localStorage.setItem(id, answer);
   getQuestion();
   getOptions();
 }

@@ -70,6 +70,7 @@ function renderQuestion() {
   choiceA.innerHTML = q.choiceA;
   choiceB.innerHTML = q.choiceB;
   choiceC.innerHTML = q.choiceC;
+  localStorage.setItem(q);
 }
 
 
@@ -130,6 +131,7 @@ function checkAnswer(answer) {
     clearInterval(TIMER);
     scoreRender();
   }
+  localStorage.setItem(answer);
 }
 
 // answer is correct

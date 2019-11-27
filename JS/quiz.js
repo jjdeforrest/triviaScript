@@ -76,6 +76,7 @@ function startQuiz() {
   renderProgress();
   renderCounter();
   TIMER = setInterval(renderCounter, 1000); // 1000ms = 1s
+  localStorage.setItem(timer, timer);
 }
 
 // render progress
@@ -83,6 +84,7 @@ function renderProgress() {
   for (var qIndex = 0; qIndex <= lastQuestion; qIndex++) {
     progress.innerHTML += "<div class='prog' id=" + qIndex + "></div>";
   }
+  localStorage.setItem(progress);
 }
 
 // counter render
@@ -105,6 +107,7 @@ function renderCounter() {
       scoreRender();
     }
   }
+  localStorage.setItem(count, timeLine);
 }
 
 // checkAnwer
@@ -129,6 +132,7 @@ function checkAnswer(answer) {
     clearInterval(TIMER);
     scoreRender();
   }
+  localStorage.setItem(answer);
 }
 
 // answer is correct
@@ -150,6 +154,7 @@ function scoreRender() {
 
 
   scoreDiv.innerHTML = `You got ${score} questions correct and your score is ${scorePerCent} %`;
+  localStorage.setItem(scoreDiv, score, scorePerCent,);
 }
 
 startQuiz();

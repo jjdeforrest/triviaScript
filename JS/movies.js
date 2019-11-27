@@ -99,6 +99,7 @@ function showQuiz(questions, quizContainer, scoresContainer, submitButton){
 
     }
   }
+  localStorage.setItem(questions, quizContainer, letter, answers);
   showQuestions(questions, quizContainer);
 }
 
@@ -135,6 +136,7 @@ function submitHandler(event){
     }
 
   }
+  localStorage.setItem(ourQuestions, correctAnswer, currentLetter);
   scoresContainer.innerHTML = correctNum + ' out of ' + ourQuestions.length;
 }
 quizContainer.addEventListener('submit', submitHandler);
