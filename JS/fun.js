@@ -90,14 +90,21 @@ function clickHandler(event1) {
     //display answer
     addTextElement('h3', 'id', 'answer', famousPeopleContainer, 'Correct!');
     correctAnswer++;
+    console.log('correct', correctAnswer);
+    
     //display full image
     addImage('img', 'id', 'full_image', famousPeopleContainer, questionsArr[questionNumber].fullPicture);
+    
   }
   else {
     //display answer
     addTextElement('h3', 'id', 'answer', famousPeopleContainer, 'Incorrect!');
     //display full image
     addImage('img', 'id', 'full_image', famousPeopleContainer, questionsArr[questionNumber].fullPicture);
+  }
+
+  if (questionNumber === 3) {
+    addTextElement('h3', 'id', 'result',famousPeopleContainer, `You got ${correctAnswer} out of ${questionNumber} correct.`);
   }
   questionNumber++;
 
@@ -123,7 +130,6 @@ function nextQuestion(event2) {
     nextButton.remove();
   }
   if (questionNumber === 4) {
-    debugger;
     window.location = 'category.html';
     console.log('answer', questionNumber);
     return;
