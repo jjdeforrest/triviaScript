@@ -1,0 +1,87 @@
+
+header {
+  background-color: black;
+  top: 0%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../img/purple-abstract.jpg");
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav{
+  background-color: black;
+  top: 0px;
+  text-align: center;
+}
+
+#nav li{
+  display: inline;
+  margin: 50px;
+  position: relative;
+  border: 10px;
+  bottom: 30px;
+}
+
+#nav li a{
+  text-decoration: none;
+}
+
+#nav li a:hover{
+  text-decoration: none;
+  background-color: #ddd;
+  color: black;
+}
+
+a {
+  color: #ffffff;
+}
+
+#crop_image{
+    width:80px;
+    height: auto;
+}
+
+#full_image {
+    width: 300px;
+    height: auto;
+}
+  
+footer {
+  color: white;
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  text-align: center;
+}
+
+#categories {
+  display: inline-block;
+  width : 80%;
+  margin-top: 30vh;
+  margin-left: 20vw;
+  /* margin-right: 15vw; */
+  margin-bottom: 15vh;
+}
+
+#categories img{
+  /* -webkit-transition: scale(1); */
+  transform: scale(1);
+  /* -webkit-transition: .3s ease-in-out; */
+  transition: .3s ease-in-out;
+}
+
+#categories a:hover img{
+  /* -webkit-transform: scale(1.3); */
+  transform: scale(1.1);
+/* opacity: 2; */
+}
+
+div a img{
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+}

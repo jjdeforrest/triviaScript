@@ -1,0 +1,85 @@
+body {
+  /* margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px; */
+}
+#programming_btn, #famous_btn, #military_btn, #sport_btn, #movies_btn {
+  width: 150px;
+  height: 20%;
+  padding: 60px;
+  /* margin-top: 300px; */
+} 
+#famous_btn {
+  background-image: url(img/fun.jpg);
+  background-size: cover;
+  /* margin-bottom: 50px; */
+}
+#programming_btn {
+  background-image: url(img/coding.jpg);
+  background-size: cover;
+}
+#military_btn {
+  background-image: url(img/military.jpg);
+  background-size: cover;
+}
+#sport_btn {
+  background-image: url(img/sports1.jpeg);
+  background-size: cover;
+}
+#movies_btn {
+  background-image: url(img/movie.jpg);
+  background-size: cover;
+}
+#categories {
+  margin-top: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  /* text-align: center; */
+  justify-content: center;
+}
+.zone1 {
+  display: inline;
+  margin: 3px;
+}
+/*------- ------ ------ FUN CSS ------- ------- --------*/
+#famous_people {
+  text-align: center;
+  margin-top: 150px;
+}
+#programming {
+  text-align: center;
+  margin-top: 150px;
+}
+#question , #answer{
+  font-weight: bolder;
+  margin: 20px;
+  font-size: 2em;
+}
+#ul_element {
+  margin-top: 40px;
+}
+#option_1, #option_2, #option_3 {
+  width: 400px;
+  display: block;
+  text-align: center;
+  list-style-type: none;
+  margin: 20px;
+  background-color: #080808;
+  padding: 10px;
+  color: white;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#option_1:hover, #option_2:hover, #option_3:hover, #next_button:hover {
+  background-color: hotpink;
+  transform: scale(1.03);
+}
+#next_button {
+  margin: 20px;
+  padding: 3px 30px;
+  border-radius: 20px;
+  background-color:black;
+  color: white;
+  font-weight: bold;
+}
