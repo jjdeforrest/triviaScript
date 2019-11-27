@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="style/reset.css">
   <link rel="stylesheet" type="text/css" href="style/style.css">
-  <title>Document</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+  <title>Scores</title>
 </head>
+
 <body>
   <header>
     <a href="index.html" id="logo">
-      <img src="img/rsz_2rsz_1triviascript.png">
+      <img src="img/logo-black.png">
     </a>
     <nav>
       <ul id="nav">
-        <li><a href="index.html" class="selected">Home</a></li>
-        <li><a href="score.html">Score</a></li>
+        <li><a href="index.html" class="selected"><i class="fas fa-home"></i>Home</a></li>
+        <!-- <li><a href="score.html">Score</a></li> -->
         <li><a href="about.html">Team</a></li>
+        <li><a href="category.html">Category</a></li>
       </ul>
     </nav>
   </header>
@@ -29,29 +34,30 @@
 
   <!--Our div is hidden by default-->
   <div id="message" style="display:none;">Your Score is 5 out of 10</div>
-   <!--TOP 5 score  -->
+  <!--TOP 5 score  -->
   <div id="top-5-score" style="display:none;">TOP 5 SCORE</div>
-  
+
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script>
 
-  function sayHi(){
-    alert("TOP 5 SCORE!!!");
-  }
+    function sayHi() {
+      alert("TOP 5 SCORE!!!");
+    }
 
-  //When the page has loaded.
-  $( document ).ready(function(){
-      $('#message').fadeIn('slow', function(){
-         $('#message').delay(5000).fadeOut(); 
+    //When the page has loaded.
+    $(document).ready(function () {
+      $('#message').fadeIn('slow', function () {
+        $('#message').delay(5000).fadeOut();
       });
-  });
-  
-  // CALLING THE TOP 5 SCORE
-  setTimeout("loadTableData(personData)", 6000);
+    });
+
+    // CALLING THE TOP 5 SCORE
+    setTimeout("loadTableData(personData)", 6000);
   </script>
   <footer>
     <p>&copy; 2019 TriviaScript Team</p>
   </footer>
   <script src="js/app.js"></script>
 </body>
+
 </html>
