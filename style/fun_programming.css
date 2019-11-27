@@ -1,4 +1,9 @@
+body {
+    /* margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px; */
 
+}
 #programming_btn, #famous_btn, #military_btn, #sport_btn, #movies_btn {
     width: 150px;
     height: 20%;
@@ -82,6 +87,10 @@
     margin-right: auto;
 }
 
+#option_1:hover, #option_2:hover, #option_3:hover, #next_button:hover {
+    background-color: hotpink;
+    transform: scale(1.03);
+}
 
 #next_button {
     margin: 20px;
