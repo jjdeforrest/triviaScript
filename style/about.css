@@ -7,7 +7,7 @@
 }
 
 body{
-  background: #222;
+  background: white;
   color: white;
 }
 
@@ -166,4 +166,51 @@ body{
   /* box-sizing: border-box; */
 }
 
+header {
+  background-color: black;
+  top: 0%;
+  width: 100%;
+}
 
+body {
+  margin: 0;
+  padding: 0;
+  /* background-image: url("../img/purple-abstract.jpg"); */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  opacity: 1;
+}
+
+nav{
+  background-color: black;
+  top: 0px;
+  text-align: center;
+}
+
+#nav li{
+  display: inline;
+  margin: 50px;
+  position: relative;
+  border: 10px;
+  bottom: 30px;
+}
+
+#nav li a{
+  text-decoration: none;
+}
+
+#nav li a:hover{
+  text-decoration: none;
+  background-color: #ddd;
+  color: black;
+}
+
+a {
+  color: #ffffff;
+}
+
+footer {
+  color: black;
+  bottom: 0%;
+  width: 100%;
+  text-align: center;
+}

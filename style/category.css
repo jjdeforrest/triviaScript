@@ -8,8 +8,9 @@ header {
 body {
   margin: 0;
   padding: 0;
-  background-image: url("../img/purple-abstract.jpg");
+  /* background-image: url("../img/purple-abstract.jpg"); */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  opacity: 1;
 }
 
 nav{

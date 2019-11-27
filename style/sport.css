@@ -1,12 +1,11 @@
-body {
-  text-align: center;
-}
+
 #quiz {
   display: inline-block;
   font-size: 2em;
   transition-duration: 0.4s;
   margin-top: 2%;
   font-family: 'Kalam', cursive;
+  text-align: center;
 }
 
 
@@ -26,6 +25,14 @@ header {
   background-color: black;
   top: 0%;
   width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* background-image: url("../img/purple-abstract.jpg"); */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  opacity: 1;
 }
 
 nav{
